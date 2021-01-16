@@ -1,0 +1,15 @@
+python bert_k_fold.py \
+	--pre_train_path /data0/liuchunchao/bert/hfl/chinese-roberta-wwm-ext\
+	--model_name BertLabelSmooth \
+	--output_dir usual_k_fold_model/BertLabelSmooth \
+	--data_dir ./data \
+	--max_seq_length 128 \
+	--train_batch_size 64 \
+	--gradient_accumulation_steps 8 \
+	--num_train_epochs 20 \
+	--learning_rate 1e-5 \
+	--warmup_rate 0.3 \
+	--weight_decay 0.02 \
+	--log_dir BertLabelSmooth.log \
+	--k_fold 5\
+	--do_train
